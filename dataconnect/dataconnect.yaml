@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "my-data-connect"
+location: "us-west4"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "test-db"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

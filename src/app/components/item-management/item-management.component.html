@@ -1,0 +1,81 @@
+<div class="container">
+    <h2>Item Management</h2>
+    <form [formGroup]="ItemForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          formControlName="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="Product">Product</label>
+        <input
+          type="Product"
+          id="Product"
+          class="form-control"
+          formControlName="Product"
+        />
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input
+          type="price"
+          id="price"
+          class="form-control"
+          formControlName="price"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary" *ngIf="!isEditMode">
+        Add Item
+      </button>
+      <button type="submit" class="btn btn-success" *ngIf="isEditMode">
+        Update Item
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="resetForm()"
+        *ngIf="isEditMode"
+      >
+        Cancel
+      </button>
+    </form>
+  
+    <hr />
+  
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Item of items">
+          <td>{{ Item.name }}</td>
+          <td>{{ Item.Product }}</td>
+          <td>{{ Item.price }}</td>
+          <td>
+            <button
+              class="btn btn-warning btn-sm"
+              (click)="editItem(Item)"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-danger btn-sm"
+              (click)="deleteItem(Item.id!)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
