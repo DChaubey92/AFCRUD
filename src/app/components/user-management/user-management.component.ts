@@ -37,7 +37,7 @@ export class UserManagementComponent implements OnInit {
       .getUsers()
       .then((users) => {
         this.users = users as User[];
-        console.log('Users:', this.users);
+        //console.log('Users:', this.users);
       })
       .catch((error) => {
         console.error('Error fetching users:', error);

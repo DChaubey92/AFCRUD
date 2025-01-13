@@ -39,7 +39,7 @@ export class ItemManagementComponent implements OnInit {
       .getItems()
       .then((items) => {
         this.items = items as Item[];
-        console.log('items:', this.items);
+        //console.log('items:', this.items);
       })
       .catch((error) => {
         console.error('Error fetching items:', error);

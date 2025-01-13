@@ -10,6 +10,8 @@ import { environment } from './environments/environment';
 import { CreateComponent } from './components/create/create.component';
 import { UserManagementComponent } from './components/user-management/user-management.component';
 import { ItemManagementComponent } from './components/item-management/item-management.component';
+
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,7 @@ import { ItemManagementComponent } from './components/item-management/item-manag
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
